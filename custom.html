@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="./custom.css">
+
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="pic">
+            <div class="square">
+                <div class="left_container">
+                    <input type="file" id="image_chooser_left" style="display:none" onchange="loadImageLeft(this)">
+                    <div class="left">
+                        <canvas class='canvas_left' width='500' height='400'></canvas>
+                    </div>
+                </div>
+                <div class="right_container">
+                    <input type="file" id="image_chooser_right" style="display:none" onchange="loadImageRight(this)">
+                    <div class="right">
+                        <canvas class='canvas_right' width='500' height='400'></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="up_container">
+                <div class="up">
+                    <div class="up_left">
+                        <img class="up_leftPic">
+                    </div>
+                </div>
+            </div>
+            <div class="down_container">
+                <div class="down">
+                    <div class="down_right">
+                        <img class="down_rightPic">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="images"></div>
+    <div class="tools">
+
+        <div class="btn_group">
+            <div class="tool_left">
+                <h6>左图</h6>
+                <button class="upload_left" onclick="document.getElementById('image_chooser_left').click();">上传左图</button>
+                <button class="reset_left" onclick="loadImageLeft(document.getElementById('image_chooser_left'))">重置左图</button>
+                <button class="blackAndWhite" onclick="filterLeft(0)">左图黑白</button>
+                <button class="negative" onclick="filterLeft(1)">反色左图</button>
+                <button class="brightness" onclick="filterLeft(2)">亮度左图+</button>
+                <button class="brightness" onclick="filterLeft(3)">亮度左图-</button>
+                <button class="contrast" onclick="filterLeft(4)">对比度左图+</button>
+                <button class="contrast" onclick="filterLeft(5)">对比度左图-</button>
+                <!--旋转-->
+                <button id="rotateBtnPlusLeft" type="button">左图旋转+</button>
+                <button id="rotateBtnReduLeft" type="button">左图旋转-</button>
+                <!--缩放-->
+                <button id="scaleBtnPlusLeft">左图放大+</button>
+                <button id="scaleBtnReduLeft">左图缩小-</button>
+                <button class="draw_left">画点左图start</button>
+                <button class="move_left">移动左图start</button>
+                <button class="save_left">保存左图</button>
+                <button class="download_left">下载左图</button>
+            </div>
+
+            <div class="tool_right">
+                <h6>右图</h6>
+                <button class="upload_left" onclick="document.getElementById('image_chooser_right').click();">上传右图</button>
+                <button class="reset_right" onclick="loadImageRight(document.getElementById('image_chooser_right'))">重置右图</button>
+                <button class="blackAndWhite" onclick="filterRight(0)">右图黑白</button>
+                <button class="negative" onclick="filterRight(1)">反色右图</button>
+                <button class="brightness" onclick="filterRight(2)">亮度右图+</button>
+                <button class="brightness" onclick="filterRight(3)">亮度右图-</button>
+                <button class="contrast" onclick="filterRight(4)">对比度右图+</button>
+                <button class="contrast" onclick="filterRight(5)">对比度右图-</button>
+                <!--旋转-->
+                <button id="rotateBtnPlusRight" type="button">右图旋转+</button>
+                <button id="rotateBtnReduRight" type="button">右图旋转-</button>
+                <!--缩放-->
+                <button id="scaleBtnPlusRight">右图放大+</button>
+                <button id="scaleBtnReduRight">右图放大-</button>
+                <button class="draw_right">画点右图start</button>
+                <button class="move_right">移动右图start</button>
+                <button class="save_right">保存右图</button>
+                <button class="download_right">下载右图</button>
+            </div>
+        </div>
+    </div>
+
+    <script src='./src/jquery.js'></script>
+    <script src="./src/Chobi.js"></script>
+    <script src="./src/caman.full.min.js"></script>
+    <script src="./src/html2canvas.js"></script>
+    <script src="./src/canvas2image.js"></script>
+    <script src="./src/base64.js"></script>
+    <script src='./custom.js'></script>
+
+</body>
+
+</html>
